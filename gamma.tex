@@ -1,0 +1,238 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Función gamma}
+\author{R}
+\date{1/3/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Función gamma},
+  pdfauthor={R},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+\hypertarget{lab2}{%
+\section{Lab2}\label{lab2}}
+
+En esta asignatura entrenaremos \emph{cosas} de matemáticas y sus
+amigos.
+
+\hypertarget{la-funciuxf3n-gamma}{%
+\subsection{La función Gamma}\label{la-funciuxf3n-gamma}}
+
+La función Gamma \(\Gamma\) tiene diversas definiciones en la
+matemática. La definición que utilizaremos es:
+
+\[ \Gamma(z)= \int_0^{\infty} x^{z-1} \cdot e^{-x}dx, \mbox{ donde } z\in \mathbb{R}.\]
+
+Resolvamos esta integral en el caso \(\Gamma(z+1)\) con
+\(z\in \mathbb{R}\). Recordemos que la fórmula integración por partes en
+este caso es:
+
+\[\int_{0}^{\infty} u \cdot d v =\left[u\cdot v \right]_0^\infty-\int_0^{\infty} v \cdot du.\]
+
+Apliquemos el método de integración por partes a la función \(\Gamma\)
+
+\[\begin{eqnarray}
+\Gamma(z+1) &=&  \int_0^{\infty} x^{z} \cdot e^{-x}dx= 
+\left|
+\begin{matrix} u=x^{z}  & dv= e^{-x}\cdot  dx 
+\\ du= z \cdot x^(z+1)  & v=-e^{-x} 
+\end{matrix}
+\right|=\\
+&& \left[-x^z\cdot e^{-x}\right]_0^\infty
+-\int_0^{\infty} z\cdot x^{z-1} \cdot \left(-e^{-x}\right)\cdot  dx=\\
+&&
+\lim_{x\to\infty}\left(-x^z\cdot e^{-x}\right)
++
+z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}\cdot dx.
+\end{eqnarray}
+\]
+
+como
+
+\[\lim_{x\to\infty}\left(-x^z\cdot e^{-x}\right)=0\]
+
+tenemos que
+
+\[\Gamma(z+1)= 
+z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}\cdot  dx.
+\]
+
+Por lo que hemos encontrado una fórmula recurrente, en al que si
+queremos saber \(\Gamma(z+1)\) tenemos que saber que vale \(\Gamma(z)\)
+y utilizar la fórmula anterior.
+
+\hypertarget{las-fuxf3rmulas-recursivas}{%
+\subsection{Las fórmulas recursivas}\label{las-fuxf3rmulas-recursivas}}
+
+La fórmulas recursivas son las que dependen de un valor anterior al que
+se calcula. La más popular es el factorial
+
+La definición de factorial de un un número natural \(n\in\mathbb{N}\), e
+¡¡obviamente!!! recursiva
+
+\[
+\begin{align*}
+\verb+factorial += n!: &\mathbb{N}& \longrightarrow  &\mathbb{N}\\
+& n &\longrightarrow & n\cdot (n-1)\cdot (n-2) \ldots \cdot 3\cdot 2\cdot 1.
+\end{align*}
+\]
+
+Se define con estas reglas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{factorial(0)}=\(0!=1\).
+\item
+  \texttt{factorial(n+1)=}\((n+1)!=(n+1)*factorial(n).\)
+\end{enumerate}
+
+En la notación matemática, como ya sabéis el factorial se representa con
+el símbolo de exclamación/admiración; así
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{factorial(0)}:= \(0!=1\).
+\item
+  \texttt{factorial(n+1)}:= \((n+1)!=(n+1)\cdot n!\).
+\end{enumerate}
+
+Así tenemos que
+
+\begin{itemize}
+\tightlist
+\item
+  \(0!=1.\)
+\item
+  \(1!=1.\)
+\item
+  \(2!= 2\cdot 1= 2.\)
+\item
+  \(3!=3\cdot 2\cdot 1= 6.\)
+\item
+  \(4!=4\cdot 3\cdot 2\cdot 1 =24.\)
+\item
+  \(\ldots \ldots\)
+\item
+  \(n!= n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.\)
+\item
+  \((n+1)!= (n+1)\cdot n!= (n+1)\cdot n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.\)
+\end{itemize}
+
+\hypertarget{gruxe1fica-fuhcion-gamma-en-los-reales}{%
+\section{Gráfica fuhcion gamma en los
+reales}\label{gruxe1fica-fuhcion-gamma-en-los-reales}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{gamma}\NormalTok{(x),}\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{10}\NormalTok{),}\AttributeTok{col=}\StringTok{"red"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Gamma(x)"}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}\AttributeTok{frame.plot=}\ConstantTok{TRUE}\NormalTok{,}\AttributeTok{main=}\StringTok{"Función Gamma"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{gamma_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\end{document}

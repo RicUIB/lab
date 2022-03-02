@@ -2,7 +2,9 @@
 title: "Función gamma"
 author: "R"
 date: "1/3/2022"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -14,9 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 En esta asignatura entrenaremos *cosas* de matemáticas y sus amigos.
 
-## La función gamma
+## La función Gamma
 
-La función gamma $\Gamma$ tiene diversas definiciones en la matemática.
+La función Gamma $\Gamma$ tiene diversas definiciones en la matemática.
 La definición que utilizaremos es:
 
 $$ \Gamma(z)= \int_0^{\infty} x^{z-1} \cdot e^{-x}dx, \mbox{ donde } z\in \mathbb{R}.$$
@@ -34,16 +36,16 @@ Apliquemos el método de integración por partes a la función $\Gamma$
 $$\begin{eqnarray}
 \Gamma(z+1) &=&  \int_0^{\infty} x^{z} \cdot e^{-x}dx= 
 \left|
-\begin{matrix} u=x^{z} & dv= e^{-x}\cdot  dx 
-\\ du= z \cdot x^(z+1) & v=-e^{-x} 
+\begin{matrix} u=x^{z}  & dv= e^{-x}\cdot  dx 
+\\ du= z \cdot x^(z+1)  & v=-e^{-x} 
 \end{matrix}
 \right|=\\
 && \left[-x^z\cdot e^{-x}\right]_0^\infty
--\int_0^{\infty} z\cdot x^{z-1} \cdot \left(-e^{-x}\right) dx=\\
+-\int_0^{\infty} z\cdot x^{z-1} \cdot \left(-e^{-x}\right)\cdot  dx=\\
 &&
 \lim_{x\to\infty}\left(-x^z\cdot e^{-x}\right)
 +
-z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}.
+z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}\cdot dx.
 \end{eqnarray}
 $$
 
@@ -54,7 +56,7 @@ $$\lim_{x\to\infty}\left(-x^z\cdot e^{-x}\right)=0$$
 tenemos que 
 
 $$\Gamma(z+1)= 
-z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}.
+z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}\cdot  dx.
 $$
 
 Por lo que hemos encontrado una fórmula recurrente, en al que si queremos saber $\Gamma(z+1)$ tenemos que  saber que vale $\Gamma(z)$ y utilizar la fórmula anterior. 
@@ -71,7 +73,7 @@ La definición de factorial de un un número natural $n\in\mathbb{N}$,  e ¡¡ob
 $$
 \begin{align*}
 \verb+factorial += n!: &\mathbb{N}& \longrightarrow  &\mathbb{N}\\
-& n &\longrightarrow & n\cdot (n-1)\cdot (n-2) \ldots \cdot 3\cdot 2\cdot 1
+& n &\longrightarrow & n\cdot (n-1)\cdot (n-2) \ldots \cdot 3\cdot 2\cdot 1.
 \end{align*}
 $$
 
@@ -86,16 +88,16 @@ En la notación matemática, como ya sabéis el factorial se representa con  el 
 
 
 1. `factorial(0)`:= $0!=1$.
-2. `factorial(n+1)`:= $(n+1)!=(n+1)\cdot n! $.
+2. `factorial(n+1)`:= $(n+1)!=(n+1)\cdot n!$.
 
 
 Así tenemos que 
 
 * $0!=`r factorial(0)`.$
 * $1!=`r factorial(1)`.$
-* $2!= 2\cdot 1=`r factorial(2)`. $
+* $2!= 2\cdot 1= `r factorial(2)`.$
 * $3!=3\cdot 2\cdot 1= `r factorial(3)`.$
-* $4!=4\cdot 3\cdot 2\cdot 1`r factorial(4)`.$
+* $4!=4\cdot 3\cdot 2\cdot 1 =`r factorial(4)`.$
 * $\ldots \ldots$
 * $n!= n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.$
 * $(n+1)!=  (n+1)\cdot n!= (n+1)\cdot n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.$
@@ -105,6 +107,15 @@ Así tenemos que
 
 
 
+
+# Gráfica fuhcion gamma en los reales
+
+
+
+
+```{r}
+curve(gamma(x),xlim=c(1,10),col="red",ylab="Gamma(x)",lwd=2,frame.plot=TRUE,main="Función Gamma")
+```
 
 
 
