@@ -20,9 +20,7 @@ toccolor: blue
 urlcolor: blue 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
-```
+
 
 
 # Lab2
@@ -108,11 +106,11 @@ En la notación matemática, como ya sabéis el factorial se representa con  el 
 
 Así tenemos que 
 
-* $0!=`r factorial(0)`.$
-* $1!=`r factorial(1)`.$
-* $2!= 2\cdot 1= `r factorial(2)`.$
-* $3!=3\cdot 2\cdot 1= `r factorial(3)`.$
-* $4!=4\cdot 3\cdot 2\cdot 1 =`r factorial(4)`.$
+* $0!=1.$
+* $1!=1.$
+* $2!= 2\cdot 1= 2.$
+* $3!=3\cdot 2\cdot 1= 6.$
+* $4!=4\cdot 3\cdot 2\cdot 1 =24.$
 * $\ldots \ldots$
 * $n!= n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.$
 * $(n+1)!=  (n+1)\cdot n!= (n+1)\cdot n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.$
@@ -128,9 +126,12 @@ Así tenemos que
 
 
 
-```{r}
+
+```r
 curve(gamma(x),xlim=c(1,10),col="red",ylab="Gamma(x)",lwd=2,frame.plot=TRUE,main="Función Gamma")
 ```
+
+![](gamma_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 
 

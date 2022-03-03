@@ -1,6 +1,7 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
 ]{article}
@@ -42,7 +43,11 @@
 \hypersetup{
   pdftitle={Función gamma},
   pdfauthor={R},
-  hidelinks,
+  colorlinks=true,
+  linkcolor={red},
+  filecolor={Maroon},
+  citecolor={blue},
+  urlcolor={blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
@@ -102,7 +107,8 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
+\renewcommand{\contentsname}{Contenidos}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -110,6 +116,11 @@
 \begin{document}
 \maketitle
 
+{
+\hypersetup{linkcolor=blue}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
 \hypertarget{lab2}{%
 \section{Lab2}\label{lab2}}
 
@@ -132,20 +143,23 @@ este caso es:
 
 Apliquemos el método de integración por partes a la función \(\Gamma\)
 
-\[\begin{eqnarray}
-\Gamma(z+1) &=&  \int_0^{\infty} x^{z} \cdot e^{-x}dx= 
+\[
+\begin{aligned}
+\Gamma(z+1) &=  \int_0^{\infty} x^{z} \cdot e^{-x}dx= 
 \left|
 \begin{matrix} u=x^{z}  & dv= e^{-x}\cdot  dx 
 \\ du= z \cdot x^(z+1)  & v=-e^{-x} 
 \end{matrix}
-\right|=\\
-&& \left[-x^z\cdot e^{-x}\right]_0^\infty
--\int_0^{\infty} z\cdot x^{z-1} \cdot \left(-e^{-x}\right)\cdot  dx=\\
-&&
+\right|
+\\
+&=\left[-x^z\cdot e^{-x}\right]_0^\infty
+-\int_0^{\infty} z\cdot x^{z-1} \cdot \left(-e^{-x}\right)\cdot  dx
+\\
+&=
 \lim_{x\to\infty}\left(-x^z\cdot e^{-x}\right)
 +
 z\cdot \int_0^{\infty} x^{z-1} \cdot e^{-x}\cdot dx.
-\end{eqnarray}
+\end{aligned}
 \]
 
 como
@@ -168,14 +182,14 @@ y utilizar la fórmula anterior.
 La fórmulas recursivas son las que dependen de un valor anterior al que
 se calcula. La más popular es el factorial
 
-La definición de factorial de un un número natural \(n\in\mathbb{N}\), e
-¡¡obviamente!!! recursiva
+La definición de factorial de un un número natural \(n\in\mathbb{N}\),
+es ¡¡obviamente!! recursiva
 
 \[
-\begin{align*}
-\verb+factorial += n!: &\mathbb{N}& \longrightarrow  &\mathbb{N}\\
-& n &\longrightarrow & n\cdot (n-1)\cdot (n-2) \ldots \cdot 3\cdot 2\cdot 1.
-\end{align*}
+\begin{aligned}
+\verb+factorial+ = n!: & \mathbb{N} \longrightarrow  \mathbb{N}\\
+& n \longrightarrow  n\cdot (n-1)\cdot (n-2) \ldots \cdot 3\cdot 2\cdot 1.
+\end{aligned}
 \]
 
 Se define con estas reglas:
@@ -223,9 +237,9 @@ Así tenemos que
   \((n+1)!= (n+1)\cdot n!= (n+1)\cdot n\cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1.\)
 \end{itemize}
 
-\hypertarget{gruxe1fica-fuhcion-gamma-en-los-reales}{%
-\section{Gráfica fuhcion gamma en los
-reales}\label{gruxe1fica-fuhcion-gamma-en-los-reales}}
+\hypertarget{gruxe1fica-funciuxf3n-gamma-en-los-reales}{%
+\section{Gráfica función Gamma en los
+reales}\label{gruxe1fica-funciuxf3n-gamma-en-los-reales}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
