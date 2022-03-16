@@ -1,15 +1,15 @@
 ---
 title: "Taller peso recién nacidos"
 output:
-  pdf_document:
-    toc: yes
-    number_sections: yes
-  word_document:
-    toc: yes
   html_document: 
     toc: yes
     number_sections: yes
     keep_md: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+    number_sections: yes
 linkcolor: red
 header-includes: \renewcommand{\contentsname}{Contenidos}
 citecolor: blue
@@ -209,7 +209,9 @@ proporciones_marginales_raza_fumar
 
 
 ```{r}
-plot(proporciones_marginales_raza_fumar,main="Proporciones marginales de peso bajo \n por raza y condición de   fumadora de la madre",col="blue")
+plot(proporciones_marginales_raza_fumar,
+     main="Proporciones marginales de peso bajo \n por raza y condición de fumadora de la madre",
+     col="blue")
 ```
 
 
@@ -222,8 +224,10 @@ Dibujad un diagrama de barras por bloques que permita visualizar esta informaci�
 
 ```{r}
 par(mfrow=c(1,2))
-barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1], beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
-barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2], beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
+        beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
+        beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
 par(mfrow=c(1,1))
 ```
 

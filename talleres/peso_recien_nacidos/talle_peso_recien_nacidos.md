@@ -313,7 +313,9 @@ proporciones_marginales_raza_fumar
 
 
 ```r
-plot(proporciones_marginales_raza_fumar,main="Proporciones marginales de peso bajo \n por raza y condición de   fumadora de la madre",col="blue")
+plot(proporciones_marginales_raza_fumar,
+     main="Proporciones marginales de peso bajo \n por raza y condición de fumadora de la madre",
+     col="blue")
 ```
 
 ![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
@@ -329,8 +331,10 @@ Dibujad un diagrama de barras por bloques que permita visualizar esta informaci�
 
 ```r
 par(mfrow=c(1,2))
-barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1], beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
-barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2], beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
+        beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
+        beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
 ```
 
 ![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
