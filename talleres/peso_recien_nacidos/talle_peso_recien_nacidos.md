@@ -47,10 +47,6 @@ Instalad y cargad el paquete MASS. Este paquete lleva una tabla de datos llamada
 library(MASS)
 ```
 
-```
-## Warning: package 'MASS' was built under R version 4.1.3
-```
-
 
 ```r
 #help(birthwt)
@@ -194,12 +190,13 @@ Primera opción  proporciones apiladas
 
 
 ```r
-barplot(100*prop.table(table(birthwt$low,birthwt$race),margin =2),
-        col=c("yellow","blue"),main=c("Porcentaje de niños con peso bajo en cada raza."))
+barplot(100*prop.table(table(birthwt$low,birthwt$race)
+                       ,margin =2),col=c("yellow","blue"),
+        main=c("Porcentaje de niños con peso bajo en cada raza."))
 legend("topleft",pch=15,legend=c("normal","bajo"),c("yellow","blue"))
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/solucion_2.2-1.png)<!-- -->
 
 Otra opcion  son las proporciones adosadas (beside)
 
@@ -208,12 +205,11 @@ Otra opcion  son las proporciones adosadas (beside)
 barplot(100*prop.table(table(birthwt$low,birthwt$race),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo en cada raza."),ylim=c(0,80))
-
 legend("topright",pch=15,legend=c("Blanca","Negra","Otra"),
        col=c("blue","black","brown"))
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/solucion_1.2.1b-1.png)<!-- -->
 
 
 ## Solución apartado 3
@@ -232,7 +228,7 @@ legend("topright",pch=15,legend=c("No fuma","Sí fuma"),
        col=c("yellow","blue"))
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/solucion_3.1-1.png)<!-- -->
 
 Comentad el gráfico....
 
@@ -246,7 +242,7 @@ legend("topright",pch=15,legend=c("No hipertensa","Sí hipertensa"),
        col=c("yellow","blue"))
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 Comentad el gráfico....
 
@@ -265,7 +261,8 @@ que permita ver, fácilmente, si la combinación de la raza de la madre y su con
 
 
 ```r
-frecuencias_tabla_raza_fumar_peso=table(birthwt$race,birthwt$smoke,birthwt$low)
+frecuencias_tabla_raza_fumar_peso=
+  table(birthwt$race,birthwt$smoke,birthwt$low)
 frecuencias_tabla_raza_fumar_peso
 ```
 
@@ -288,7 +285,8 @@ frecuencias_tabla_raza_fumar_peso
 ```
 
 ```r
-proporciones_marginales_raza_fumar=prop.table(frecuencias_tabla_raza_fumar_peso,margin = c(1,2))
+proporciones_marginales_raza_fumar=
+  prop.table(frecuencias_tabla_raza_fumar_peso,margin = c(1,2))
 proporciones_marginales_raza_fumar
 ```
 
@@ -318,7 +316,26 @@ plot(proporciones_marginales_raza_fumar,
      col="blue")
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/solucion_4.2-1.png)<!-- -->
+
+
+
+
+
+```r
+ftable(proporciones_marginales_raza_fumar)
+```
+
+```
+##                     normal       bajo
+##                                      
+## blanca si fuma  0.90909091 0.09090909
+##        no fuma  0.63461538 0.36538462
+## negra  si fuma  0.68750000 0.31250000
+##        no fuma  0.40000000 0.60000000
+## otra   si fuma  0.63636364 0.36363636
+##        no fuma  0.58333333 0.41666667
+```
 
 
 ## Solución apartado 5 
@@ -337,10 +354,31 @@ barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
         beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
 ```
 
-![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
 par(mfrow=c(1,1))
 ```
 
+Otra forma
+
+
+
+```r
+par(mfrow=c(1,2))
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
+        beside=TRUE, ylim=c(0,0.6),main="Pon tu título....",
+        col=c("white","black","grey"))
+barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
+        beside=TRUE, ylim=c(0,0.6),main="Pon tu título....",
+        col=c("white","black","grey"))
+legend("topright",pch=0,legend=c("Blanca","Negra","Otras"),
+        fill=c("white","black","grey"))
+```
+
+![](talle_peso_recien_nacidos_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
+par(mfrow=c(1,1))
+```
 
