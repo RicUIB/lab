@@ -372,7 +372,7 @@ barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
 barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
         beside=TRUE, ylim=c(0,0.6),main="Pon tu título....",
         col=c("white","black","grey"))
-legend("topright",pch=0,legend=c("Blanca","Negra","Otras"),
+legend("topright",pch=22,legend=c("Blanca","Negra","Otras"),
         fill=c("white","black","grey"))
 ```
 
