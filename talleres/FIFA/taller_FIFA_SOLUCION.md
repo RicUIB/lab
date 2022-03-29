@@ -1,6 +1,6 @@
 ---
-title: "Taller datos  FIFA 2019. Resuelto"
-date: "25 marzo, 2022"
+title: "Taller datos  FIFA 2020. Resuelto"
+date: "28 marzo, 2022"
 output:
   html_document: 
     toc: yes
@@ -23,7 +23,7 @@ urlcolor: blue
 
 
 
-# Taller evaluable datos FIFA 2020
+# Taller datos  FIFA 2020
 
 Registraros en kaggle y bajaros  el data set [FIFA 2020  Datos completos 2015 a 2020](https://www.kaggle.com/stefanoleone992/fifa-20-complete-player-dataset).
 Guarda los datos en una carpeta FIFA2020.

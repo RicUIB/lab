@@ -1,16 +1,16 @@
 ---
-title: "Taller datos  FIFA 2019. Resuelto"
+title: "Taller datos  FIFA 2020. Resuelto"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-    number_sections: yes
-  word_document:
-    toc: yes
   html_document: 
     toc: yes
     number_sections: yes
     keep_md: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+    number_sections: yes
 linkcolor: red
 header-includes: \renewcommand{\contentsname}{Contenidos}
 citecolor: blue
@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE,cache=FALSE)
 
 
 
-# Taller evaluable datos FIFA 2020
+# Taller datos  FIFA 2020
 
 Registraros en kaggle y bajaros  el data set [FIFA 2020  Datos completos 2015 a 2020](https://www.kaggle.com/stefanoleone992/fifa-20-complete-player-dataset).
 Guarda los datos en una carpeta FIFA2020.
