@@ -1,25 +1,25 @@
 ---
 title: "Taller peso recién nacidos"
 output:
-  pdf_document:
-    toc: yes
-    number_sections: yes
-  word_document:
-    toc: yes
   html_document: 
     toc: yes
     number_sections: yes
     keep_md: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+    number_sections: yes
 linkcolor: red
 header-includes: \renewcommand{\contentsname}{Contenidos}
 citecolor: blue
 toccolor: blue
 urlcolor: blue
+editor_options: 
+  chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 
 # Enunciado
@@ -42,13 +42,19 @@ Instalad y cargad el paquete MASS. Este paquete lleva una tabla de datos llamada
 Instalad y cargad el paquete MASS. Este paquete lleva una tabla de datos llamada birthwt sobre factores que pueden incidir en el peso de los niños al nacer. Antes de empezar, con str, View, head … explorad su estructura y consultad en su Ayuda el significado de cada variable.
 
 
-```{r solucion_1.1}
+
+```r
 #descomentar para instalar 
 #install.packages("MASS")
 library(MASS)
 ```
 
-```{r}
+```
+## Warning: package 'MASS' was built under R version 4.1.3
+```
+
+
+```r
 #help(birthwt)
 ```
 
@@ -101,17 +107,47 @@ Venables, W. N. and Ripley, B. D. (2002) Modern Applied Statistics with S. Fourt
 
 Exploramos la estructura de los datos
 
-```{r solucion_1.2}
+
+```r
 str(birthwt)
 ```
 
+```
+## 'data.frame':	189 obs. of  10 variables:
+##  $ low  : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ age  : int  19 33 20 21 18 21 22 17 29 26 ...
+##  $ lwt  : int  182 155 105 108 107 124 118 103 123 113 ...
+##  $ race : int  2 3 1 1 1 3 1 3 1 1 ...
+##  $ smoke: int  0 0 1 1 1 0 0 0 1 1 ...
+##  $ ptl  : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ ht   : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ ui   : int  1 0 0 1 1 0 0 0 0 0 ...
+##  $ ftv  : int  0 3 1 2 0 0 1 1 1 0 ...
+##  $ bwt  : int  2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 ...
+```
 
-```{r solucion_1.3}
+
+
+```r
 birthwt$low=factor(birthwt$low,labels=c("normal","bajo"))
 birthwt$race=factor(birthwt$race,labels=c("blanca","negra","otra"))
 birthwt$smoke=factor(birthwt$smoke,labels=c("si fuma","no fuma"))
 birthwt$ht=factor(birthwt$smoke,labels=c("no hipertesión","sí hipertensión"))
 str(birthwt)
+```
+
+```
+## 'data.frame':	189 obs. of  10 variables:
+##  $ low  : Factor w/ 2 levels "normal","bajo": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ age  : int  19 33 20 21 18 21 22 17 29 26 ...
+##  $ lwt  : int  182 155 105 108 107 124 118 103 123 113 ...
+##  $ race : Factor w/ 3 levels "blanca","negra",..: 2 3 1 1 1 3 1 3 1 1 ...
+##  $ smoke: Factor w/ 2 levels "si fuma","no fuma": 1 1 2 2 2 1 1 1 2 2 ...
+##  $ ptl  : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ ht   : Factor w/ 2 levels "no hipertesión",..: 1 1 2 2 2 1 1 1 2 2 ...
+##  $ ui   : int  1 0 0 1 1 0 0 0 0 0 ...
+##  $ ftv  : int  0 3 1 2 0 0 1 1 1 0 ...
+##  $ bwt  : int  2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 ...
 ```
 
 
@@ -122,9 +158,27 @@ Calculad una tabla bidimensional de frecuencias relativas marginales de los pare
 
 **Solución**
 
-```{r solucion_2.1}
+
+```r
 prop.table(table(birthwt$low,birthwt$race),margin = 2)
+```
+
+```
+##         
+##             blanca     negra      otra
+##   normal 0.7604167 0.5769231 0.6268657
+##   bajo   0.2395833 0.4230769 0.3731343
+```
+
+```r
 100*prop.table(table(birthwt$low,birthwt$race),margin =2)
+```
+
+```
+##         
+##            blanca    negra     otra
+##   normal 76.04167 57.69231 62.68657
+##   bajo   23.95833 42.30769 37.31343
 ```
 
 Explica qué son estas tablas...
@@ -140,22 +194,28 @@ Asimismo, dibujad un diagrama de barras por bloques de estas frecuencias relativ
 
 Primera opción  proporciones apiladas
 
-```{r solucion_2.2}
+
+```r
 barplot(100*prop.table(table(birthwt$low,birthwt$race)
                        ,margin =2),col=c("yellow","blue"),
         main=c("Porcentaje de niños con peso bajo en cada raza."))
 legend("topleft",pch=15,legend=c("normal","bajo"),c("yellow","blue"))
 ```
 
+![](taller_peso_recien_nacidos_files/figure-html/solucion_2.2-1.png)<!-- -->
+
 Otra opcion  son las proporciones adosadas (beside)
 
-```{r solucion_1.2.1b}
+
+```r
 barplot(100*prop.table(table(birthwt$low,birthwt$race),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo en cada raza."),ylim=c(0,80))
 legend("topright",pch=15,legend=c("Blanca","Negra","Otra"),
        col=c("blue","black","brown"))
 ```
+
+![](taller_peso_recien_nacidos_files/figure-html/solucion_1.2.1b-1.png)<!-- -->
 
 
 ## Solución apartado 3
@@ -164,7 +224,8 @@ Repetid el punto anterior para los pares (madre fumadora o no, peso inferior a 2
 
 **Solución**
 
-```{r  solucion_3.1}
+
+```r
 barplot(100*prop.table(table(birthwt$low,birthwt$smoke),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo madre fumadora"),ylim=c(0,80))
@@ -173,9 +234,12 @@ legend("topright",pch=15,legend=c("No fuma","Sí fuma"),
        col=c("yellow","blue"))
 ```
 
+![](taller_peso_recien_nacidos_files/figure-html/solucion_3.1-1.png)<!-- -->
+
 Comentad el gráfico....
 
-```{r }
+
+```r
 barplot(100*prop.table(table(birthwt$low,birthwt$ht),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo madre hipertensa"),ylim=c(0,80))
@@ -183,6 +247,8 @@ barplot(100*prop.table(table(birthwt$low,birthwt$ht),margin =2),
 legend("topright",pch=15,legend=c("No hipertensa","Sí hipertensa"),
        col=c("yellow","blue"))
 ```
+
+![](taller_peso_recien_nacidos_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 Comentad el gráfico....
 
@@ -199,27 +265,82 @@ que permita ver, fácilmente, si la combinación de la raza de la madre y su con
 
 
 
-```{r solucion_4.1}
+
+```r
 frecuencias_tabla_raza_fumar_peso=
   table(birthwt$race,birthwt$smoke,birthwt$low)
 frecuencias_tabla_raza_fumar_peso
+```
+
+```
+## , ,  = normal
+## 
+##         
+##          si fuma no fuma
+##   blanca      40      33
+##   negra       11       4
+##   otra        35       7
+## 
+## , ,  = bajo
+## 
+##         
+##          si fuma no fuma
+##   blanca       4      19
+##   negra        5       6
+##   otra        20       5
+```
+
+```r
 proporciones_marginales_raza_fumar=
   prop.table(frecuencias_tabla_raza_fumar_peso,margin = c(1,2))
 proporciones_marginales_raza_fumar
 ```
 
+```
+## , ,  = normal
+## 
+##         
+##             si fuma    no fuma
+##   blanca 0.90909091 0.63461538
+##   negra  0.68750000 0.40000000
+##   otra   0.63636364 0.58333333
+## 
+## , ,  = bajo
+## 
+##         
+##             si fuma    no fuma
+##   blanca 0.09090909 0.36538462
+##   negra  0.31250000 0.60000000
+##   otra   0.36363636 0.41666667
+```
 
-```{r solucion_4.2}
+
+
+```r
 plot(proporciones_marginales_raza_fumar,
      main="Proporciones marginales de peso bajo \n por raza y condición de fumadora de la madre",
      col="blue")
 ```
 
+![](taller_peso_recien_nacidos_files/figure-html/solucion_4.2-1.png)<!-- -->
 
 
 
-```{r}
+
+
+```r
 ftable(proporciones_marginales_raza_fumar)
+```
+
+```
+##                     normal       bajo
+##                                      
+## blanca si fuma  0.90909091 0.09090909
+##        no fuma  0.63461538 0.36538462
+## negra  si fuma  0.68750000 0.31250000
+##        no fuma  0.40000000 0.60000000
+## otra   si fuma  0.63636364 0.36363636
+##        no fuma  0.58333333 0.41666667
 ```
 
 
@@ -230,28 +351,50 @@ Dibujad un diagrama de barras por bloques que permita visualizar esta informaci�
 
 **Solución**
 
-```{r}
+
+```r
 par(mfrow=c(1,2))
 barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
         beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
 barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
         beside=TRUE, legend.text=TRUE, ylim=c(0,0.6),main="Pon tu título....")
+```
+
+![](taller_peso_recien_nacidos_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+```r
 par(mfrow=c(1,1))
 ```
 
 Otra forma
 
 
-```{r}
+
+```r
 par(mfrow=c(1,2))
 barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,1],
-        beside=TRUE, ylim=c(0,0.6),main="Pon tu título....",
-        col=c("white","black","grey"))
+        beside=TRUE,
+        ylim=c(0,0.6),
+        main="Pon tu título....",
+        sub="pon subtitulo",
+        col=c("white","black","grey"),
+        border="blue")
 barplot(prop.table(frecuencias_tabla_raza_fumar_peso, margin=1)[,,2],
-        beside=TRUE, ylim=c(0,0.6),main="Pon tu título....",
-        col=c("white","black","grey"))
-legend("topright",pch=22,legend=c("Blanca","Negra","Otras"),
-        fill=c("white","black","grey"))
+        beside=TRUE,
+        ylim=c(0,0.6),
+        main="Pon tu título....",
+        sub="pon subtitulo",
+        col=c("white","black","grey"),
+        border="blue")
+legend("topright",
+       legend=c("Blanca","Negra","Otras"),
+       border="blue",
+      fill=c("white","black","grey"))
+```
+
+![](taller_peso_recien_nacidos_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
 par(mfrow=c(1,1))
 ```
 
