@@ -396,16 +396,16 @@ Se sabe que $=\frac23$ de los internos de una cierta prisión son menores de 25 
 
 ### Solución
 
-Sea $Mayor_25$ el suceso ser menor de 25 años, $H$ ser hombre y $M=H^c$ ser mujer.
+Sea $Mayor\\_25$ el suceso ser menor de 25 años, $H$ ser hombre y $M=H^c$ ser mujer.
 
-Según dice el enunciado del problemas tenemos que $P(Mayor_25)=\frac23$, $P(H)=\frac35$, y por lo tanto $P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25.$  Además nos dicen que $P(M\cup Mayor_25)=\frac58.$
+Según dice el enunciado del problemas tenemos que $P(Mayor\_25)=\frac23$, $P(H)=\frac35$, y por lo tanto $P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25.$  Además nos dicen que $P(M\cup Mayor\_25)=\frac58.$
 
 Nos piden la probabilidad de ser mujer y menor de 25 es decir 
-$P(M\cap Mayor_25^c)=P(M-Mayor_25)=P(M)-P(M\cap Mayor_25)$.
+$P(M\cap Mayor\_25^c)=P(M-Mayor\_25)=P(M)-P(M\cap Mayor\_25)$.
 
-Como $\frac58= P(M\cup Mayor_25)=P(M)+ P(Mayor_25)-P(M\cap Mayor_25))$ tenemos que 
- $\frac58=\frac25+ \frac23-P(M\cap Mayor_25)$ luego  la probabilidad que se pide es 
- $P(M\cap Mayor_25)=\frac25+ \frac23-\frac58=\frac{53}{120}.$ 
+Como $\frac58= P(M\cup Mayor\_25)=P(M)+ P(Mayor\_25)-P(M\cap Mayor\_25))$ tenemos que 
+ $\frac58=\frac25+ \frac23-P(M\cap Mayor\_25)$ luego  la probabilidad que se pide es 
+ $P(M\cap Mayor\_25)=\frac25+ \frac23-\frac58=\frac{53}{120}.$ 
 
  
 

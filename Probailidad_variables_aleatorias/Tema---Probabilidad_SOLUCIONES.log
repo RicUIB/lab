@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.21)  25 APR 2022 10:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.21)  25 APR 2022 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -530,17 +530,17 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                 on input line 667.
 
 [9] [10]
-Underfull \hbox (badness 1728) in paragraph at lines 860--866
+Underfull \hbox (badness 1728) in paragraph at lines 861--867
 \T1/lmr/m/n/10 Consideremos los suce-sos $\OML/lmm/m/it/10 R \OT1/lmr/m/n/10 = []$\T1/lmr/m/n/10 , $\OML/lmm/m/it/10 B \OT1/lmr/m/n/10 = []$ \T1/lmr/m/n/10 y $\OML/lmm/m/it/10 N \OT1/lmr/m/n/10 =
  []
 
 
-Overfull \hbox (32.16658pt too wide) in paragraph at lines 860--866
+Overfull \hbox (32.16658pt too wide) in paragraph at lines 861--867
 \T1/lmr/m/n/10 or-den de ex-trac-ción. Así que los re-sul-ta-dos posi-bles del ex-per-i-mento son $\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 RR; RN; NR; RB; BR; NN; NB; BN; BB\OMS/lmsy/m/n/10 g$ 
  []
 
 [11]
-Underfull \hbox (badness 3407) in paragraph at lines 902--904
+Underfull \hbox (badness 3407) in paragraph at lines 903--905
 []\T1/lmr/m/n/10 Describamos los suce-sos ``Primera bola blanca''=$\OMS/lmsy/m/n/10 f\OML/lmm/m/it/10 BB; BR; BN\OMS/lmsy/m/n/10 g$ \T1/lmr/m/n/10 y el suceso ``Se-gunda bola es
  []
 
@@ -549,15 +549,15 @@ Package rerunfilecheck Info: File `Tema---Probabilidad_SOLUCIONES.out' has not c
 (rerunfilecheck)             Checksum: BAC62329DBE86831D2AEDD84A6845AA7;5810.
  ) 
 Here is how much of TeX's memory you used:
- 12410 strings out of 480193
- 195468 string characters out of 5891643
+ 12412 strings out of 480193
+ 195487 string characters out of 5891643
  513880 words of memory out of 5000000
- 30072 multiletter control sequences out of 15000+600000
- 524837 words of font info for 73 fonts, out of 8000000 for 9000
+ 30073 multiletter control sequences out of 15000+600000
+ 527818 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,8n,63p,474b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tema---Probabilidad_SOLUCIONES.pdf (17 pages, 345220 bytes).
+Output written on Tema---Probabilidad_SOLUCIONES.pdf (17 pages, 345277 bytes).
 PDF statistics:
  512 PDF objects out of 1000 (max. 8388607)
  447 compressed objects within 5 object streams
