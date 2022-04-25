@@ -3,12 +3,12 @@ title: "Tema 1 - Probabilidad"
 author: ' '
 date: ''
 output:
-  beamer_presentation: default
   ioslides_presentation:
     css: Mery_style.css
     keep_md: no
     logo: Images/matriz_mov.gif
     widescreen: yes
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -826,7 +826,7 @@ Así  el resultado del clasificador o del diagnóstico  puede ser:
 ## Clasificación o Diagnósticos
 
 <div class="center">
-[![SiliconValley](https://img.youtube.com/vi/pqTntG1RXSY/0.jpg)](https://www.youtube.com/watch?v=pqTntG1RXSY "SiliconValley")
+[![SiliconValley](https://img.youtube.com/vi/tWwCK95X6go/0.jpg)](https://www.youtube.com/watch?v=tWwCK95X6go)
 </div>
 
 
