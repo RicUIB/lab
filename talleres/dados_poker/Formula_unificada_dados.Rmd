@@ -1,11 +1,11 @@
 ---
-title: "Los Dados de Poker"
-author: "Probabilidad y variables aleatorias para ML con R y Python"
+title: "Combinatoria con 6 dados de poker"
+author: ""
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE)
 ```
 
 ## [Wikipedia: los dados de Poker](https://en.wikipedia.org/wiki/Poker_dice)
@@ -38,7 +38,8 @@ casos_posibles=6^5
 casos_posibles
 sum(casos_favorables)
 probabilidades=casos_favorables/casos_posibles
-knitr::kable(probabilidades)
+tabla_probabilidades_poker=data.frame(Figura=names(casos_favorables),Casos=casos_favorables,Probabilidad=probabilidades)
+knitr::kable(tabla_probabilidades_poker,row.names = FALSE)
 sum(probabilidades)
 ```
 
@@ -52,4 +53,4 @@ head(sim)
 tail(sim)
 ```
 
-**Ejercicio**: Detectar en la simulación anterior, los casos estudiados en apartados anteriores. Pista: si necesitas ayuda, tienes el curso de Estadística Descriptiva con M. Santos y J. G. Gomila
+**Ejercicio**: Detectar en la simulación anterior, los casos estudiados en apartados anteriores.
