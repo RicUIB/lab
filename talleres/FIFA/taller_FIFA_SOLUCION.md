@@ -1,6 +1,6 @@
 ---
 title: "Taller datos  FIFA 2020. Resuelto"
-date: "28 marzo, 2022"
+date: "30 marzo, 2022"
 output:
   html_document: 
     toc: yes

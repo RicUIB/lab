@@ -49,10 +49,6 @@ Instalad y cargad el paquete MASS. Este paquete lleva una tabla de datos llamada
 library(MASS)
 ```
 
-```
-## Warning: package 'MASS' was built under R version 4.1.3
-```
-
 
 ```r
 #help(birthwt)
@@ -199,7 +195,7 @@ Primera opción  proporciones apiladas
 barplot(100*prop.table(table(birthwt$low,birthwt$race)
                        ,margin =2),col=c("yellow","blue"),
         main=c("Porcentaje de niños con peso bajo en cada raza."))
-legend("topleft",pch=15,legend=c("normal","bajo"),c("yellow","blue"))
+legend("topleft",legend=c("normal","bajo"),fill=c("yellow","blue"))
 ```
 
 ![](taller_peso_recien_nacidos_files/figure-html/solucion_2.2-1.png)<!-- -->
@@ -211,8 +207,8 @@ Otra opcion  son las proporciones adosadas (beside)
 barplot(100*prop.table(table(birthwt$low,birthwt$race),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo en cada raza."),ylim=c(0,80))
-legend("topright",pch=15,legend=c("Blanca","Negra","Otra"),
-       col=c("blue","black","brown"))
+legend("topright",legend=c("normal","bajo"),
+                         fill=c("yellow","blue"))
 ```
 
 ![](taller_peso_recien_nacidos_files/figure-html/solucion_1.2.1b-1.png)<!-- -->
@@ -228,10 +224,11 @@ Repetid el punto anterior para los pares (madre fumadora o no, peso inferior a 2
 ```r
 barplot(100*prop.table(table(birthwt$low,birthwt$smoke),margin =2),
         col=c("yellow","blue"),beside=TRUE,
-        main=c("Porcentaje de niños con peso bajo madre fumadora"),ylim=c(0,80))
+        main=c("Porcentaje de niños con peso bajo madre fumadora"),
+        ylim=c(0,80))
 
-legend("topright",pch=15,legend=c("No fuma","Sí fuma"),
-       col=c("yellow","blue"))
+legend("topright",legend=c("No fuma","Sí fuma"),
+       fill=c("yellow","blue"))
 ```
 
 ![](taller_peso_recien_nacidos_files/figure-html/solucion_3.1-1.png)<!-- -->
@@ -244,8 +241,8 @@ barplot(100*prop.table(table(birthwt$low,birthwt$ht),margin =2),
         col=c("yellow","blue"),beside=TRUE,
         main=c("Porcentaje de niños con peso bajo madre hipertensa"),ylim=c(0,80))
 
-legend("topright",pch=15,legend=c("No hipertensa","Sí hipertensa"),
-       col=c("yellow","blue"))
+legend("topright",legend=c("No hipertensa","Sí hipertensa"),
+       fill=c("yellow","blue"))
 ```
 
 ![](taller_peso_recien_nacidos_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
