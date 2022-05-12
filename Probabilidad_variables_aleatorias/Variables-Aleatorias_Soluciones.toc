@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Variables aleatorias discretas}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problema 1.}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Solución}{2}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problema 2.}{7}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Solución}{8}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Problema 3.}{8}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Solución}{8}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Problema 4.}{9}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Solución}{9}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Problema 5.}{9}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Solución}{9}{subsubsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.6}Problema 6.}{9}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Solución}{9}{subsubsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.7}Problema 6.}{9}{subsection.1.7}%
+\contentsline {section}{\numberline {2}Variables aleatorias continuas}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problema 1.}{9}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Solución}{10}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Problema 2.}{10}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Solución}{10}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Problema 3.}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Solución}{10}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.4}Problema 4.}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Solución}{10}{subsubsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.5}Problema 5.}{10}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Solución}{10}{subsubsection.2.5.1}%
+\contentsline {section}{\numberline {3}Transformación de variables aleatorias}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problema 1.}{10}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Solución}{11}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Problema 2.}{11}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Solución}{11}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Problema 3.}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Solución}{11}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Problema 4.}{11}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Solución}{11}{subsubsection.3.4.1}%
