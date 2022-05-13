@@ -1,0 +1,108 @@
+---
+title: "Untitled"
+author: "RA"
+date: "13/5/2022"
+output: html_document
+---
+
+---
+title: "Distribuciones Notables Parte I:  Distribuciones Discretas"
+author: "Laboratorio de software y problemas 2. GMAT"
+output:
+  beamer_presentation:
+    includes:
+      in_header: header_pagenrs_complet.tex
+    incremental: no
+    theme: AnnArbor 
+    toc: yes
+    slide_level: 2
+    #logo: matriz_mov.gif
+  ioslides_presentation:
+    logo: matriz_mov.gif
+    incremental: no
+    widescreen: true
+  slidy_presentation:
+    incremental: no
+lang: es-ES
+---
+
+```
+title: "Distribuciones Notables Parte I:  Distribuciones Discretas"
+author: "Laboratorio de software y problemas 2. GMAT"
+#  si runtime: shiny está comentada con hastag guarda la presentación en html
+# si runtime: shiny está descomentada sin el hastag 
+output: 
+  ioslides_presentation: 
+    css: Mery_style.css
+    keep_md: yes
+    logo: matriz_mov.gif
+    widescreen: yes
+    self_contained: no
+runtime: shiny
+```
+
+```{r setup0, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
+library(reticulate)
+```
+
+
+
+## Ejemplo $B(n=10,p=0.4).$
+<div class="example">
+Nos preguntamos:
+
+1. ¿Cuál es la probabilidad de que saquemos exactamente $4$ bolas rojas?
+2. ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
+3. ¿Cuál es la probabilidad de que saquemos  menos de $3$ bolas rojas?
+4. ¿Cuál es el valor esperado del número de bolas rojas?
+5. ¿Cuál es la desviación típica  del número de bolas rojas?
+
+</div>
+
+## Ejemplo $B(n=10,p=0.4).$
+
+<div class="example-sol">
+ 
+**Solución 1**. ¿Cuál es la probabilidad de que saquemos exactamente $4$ rojas?
+
+Utilizando la función de probabilidad, tenemos que:
+
+\begin{eqnarray*}
+P(X=4)&=&{10\choose 4}\cdot 0.4^4\cdot (1-0.4)^{10-4}
+= \frac{10!}{(10-4)!\cdot 4!}\cdot 0.4^4\cdot 0.6^6\\
+&=& \frac{7\cdot 8\cdot 9\cdot 10}{1\cdot 2\cdot 3\cdot 4}\cdot 0.4^4\cdot 0.6^6=`r round(choose(10,4)* 0.4^4*0.6^6,7)`.
+\end{eqnarray*}
+
+
+Con R
+
+```{r}
+dbinom(4,size=10,prob = 0.4)
+```
+
+</div>
+
+
+## Ejemplo $B(n=10,p=0.4).$
+
+<div class="example-sol">
+
+**Solución 2**.  ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
+
+La probabilidad de sacar al menos 4 rojas se expresa como 
+
+$P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):$
+
+
+\begin{eqnarray*}
+P(x\leq 3)&=& P(X=0)+P(X=1)+P(X=2)+P(X=3)\\
+&=& 
+ {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
+&+&{10\choose 2}\cdot 0.4^2\cdot (1-0.4)^{10-2}+ {10\choose 3}\cdot 0.4^3\cdot (1-0.4)^{10-3}\\
+&=&`r round(pbinom(3,10,0.4),7)`.
+\end{eqnarray*}
+
+
+</div>
+
