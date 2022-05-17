@@ -542,7 +542,7 @@ Buscad en la documentación de python cómo se dibuja la función de probabilida
 <div class="exercise-sol">
 Pista: Necesitaremos investigar más librerías:
 
-```{python}
+```{python mathplot,eval=FALSE}
 import numpy as np
 import matplotlib.pyplot as plt
 ```
@@ -579,7 +579,7 @@ plt.show()
 
 <div class="center"> 
 
-```{python dibu_python2,echo=FALSE}
+````
 n, p = 10, 0.25
 x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
 
@@ -1448,7 +1448,7 @@ empezando en $0$.
 
 ## Gráficos con python
 
-```{python geom2, eval=F}
+```
 p = 0.25
 x = np.arange(geom.ppf(0.01, p),geom.ppf(0.99, p))
 fig =plt.figure(figsize=(5, 2.7))
@@ -1473,7 +1473,7 @@ plt.show()
 
 ## Gráficos con python
 
-```{python, echo=F}
+```
 
 p = 0.25
 x = np.arange(geom.ppf(0.01, p),geom.ppf(0.99, p))
@@ -2055,7 +2055,7 @@ plt.show()
 ## Gráficos de la binomial negativa con python
 
 
-```{python  negativa_py_show,echo=FALSE}
+```
 n, p = 10, 0.25
 x = np.arange(0,nbinom.ppf(0.99, n, p))
 fig =plt.figure(figsize=(5, 2.7))
@@ -2956,7 +2956,7 @@ plt.show()
 
 ## Gráficos con python
 
-```{python py_poiss2,eval=TRUE,echo=FALSE}
+```{python py_poiss2,eval=FALSE,echo=FALSE}
 from scipy.stats import poisson
 mu = 10 # mu = lambda
 x = np.arange(poisson.ppf(0.01, mu),poisson.ppf(0.99, mu))
@@ -3516,7 +3516,7 @@ for tick in ax.yaxis.get_major_ticks():
 ## Gráficos con python
 
 
-```{python py_hyper2,eval=TRUE,echo=FALSE}
+```
 from scipy.stats import hypergeom
 [M, n, N] = [20, 7, 12] ##20 elementos, 7 del tipo, extraemos 12
 x = np.arange(max(0, N-M+n),min(n, N))

@@ -553,7 +553,7 @@ El siguiente código de R dibuja las función de probabilidad y la de distribuci
 
 
 
-```r
+```
 par(mfrow=c(1,2))
 aux=rep(0,22)
 aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
