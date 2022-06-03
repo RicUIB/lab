@@ -1,0 +1,202 @@
+---
+title: "Problemas probabilidad y variables aleatorias. Laboratorio software y problemas 2"
+header-includes:
+   - \usepackage{amsmath}
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+```{r, echo=FALSE}
+pr=1
+```
+
+# Problemas de probabilidad y variables aleatorias lab2
+
+## Problema `r pr; pr=pr+1`
+
+Un estuche contiene 2 lápices azules y 3 rojos. Se extraen dos lápices del estuche.
+
+a.	Escribe los resultados elementales que definen los sucesos.
+$M =$ "Solo ha salido un lápiz rojo" y $N =$ "El segundo lápiz extraído es azul".  (**0.5 puntos**)
+b.	Halla las probabilidades de $M$, $N$ y $M \cap N$. (**1 punto.**)
+c.	¿Son los sucesos M y N independientes? (**1 punto.**)
+
+
+## Problema `r pr; pr=pr+1`
+
+En promedio, 3 servidores de cada 20 se bloquea durante una tormenta eléctrica. La compañía Amazonas  tiene  numerosos servidores repartidos  en varios Data Centers. 
+Responder, modelando con una distribución notable las siguientes cuestiones:
+
+a. ¿Calcula la probabilidad de que menos de 5 servidores se bloqueen en un Data Center con 20 servidores? (**0.5 puntos.**)
+b. ¿Calcula la probabilidad de que exactamente 5 servidores se hayan bloqueado en un Data Center de 20 servidores? (**1 punto.**)
+c.  En un Data Center de 60 servidores  ¿Cuál es la probabilidad de  más de 10 ($>10$) servidores se bloqueen? Hacerlo utilizando aproximación por una distribución de Poisson. (**1 punto.**)
+
+```{r code,echo=FALSE,eval=FALSE}
+p=3/20
+pbinom(1:300,4000,p)
+60**p
+1-0.7060 
+1-ppois(10,60**p)
+```
+
+
+
+## Problema `r pr; pr=pr+1`
+
+El profesor de estadística repite la palabra *muestra* a  un ritmo de 20 veces por cada 60 minutos. Sea $X_t$ la variable que cuenta el número de veces que el profesor ha dicho *muestra*  en $t$ minutos.
+
+a.  Modelizad $X_t$  mediante una distribución Poisson. De $X_t$ dad  su parámetro, su valor esperado y varianza. (**0.5 puntos.**)
+b.  ¿Cuál es la probabilidad de que diga  muestra más de  10 veces en media hora? (**1 punto.**)
+c.  Sea $T=$ el tiempo transcurrido entre la última vez que el profesor dice *muestra* hasta la siguiente vez ¿Cuál es la probabilidad de que $T> 15$? (**1 punto**)
+
+
+
+
+## Problema `r pr; pr=pr+1`
+
+ Consideremos la va. $X$ con densidad, donde $\alpha$ es un parámetro real.
+
+$$
+f(x)=\left\{
+\begin{array}{ll}
+\alpha \cdot e^{1-x} & \mbox{si } -1<x<1\\
+0 & \mbox{en otro caso} \\
+\end{array}
+\right.
+$$
+
+
+
+1. Calculad $\alpha$ para que $f$ sea densidad. (**1 punto.**)
+1. Calculad la función de distribución de $X.$ (**1 punto.**)
+1. Calculad $P(|X|>\frac{1}{2}).$ (**0.5 puntos.**)
+1. Calculad $E(X).$ (**Punto extra de esta entrega**. Indicación: hay que integrar por partes)
+
+```{r dd, echo=FALSE}
+alpha=1/(exp(2)-1)
+```
+
+```{r plot,echo=FALSE,fig.width=4,fig.height=3,fig.align='center'}
+f=function(x,alpha) {ifelse(abs(x)<1,alpha*exp(1-x),0)} 
+  curve(f(x,alpha),xlim=c(-2,2),col="tomato",ylab="densidad",n=1000,cex=0.5,cex.lab=0.5,cex.axis=0.5)
+```
+
+## Problema `r pr; pr=pr+1` 
+
+(\textbf{1 punto.}) Lanzamos un dado de 12 caras numeradas  con enteros del 1 al 12 sobre una mesa plana. Observamos el número superior del dado. Calcular la probabilidad de que salga mayor que 8  si el resultado es par.
+
+
+
+## Problema `r pr; pr=pr+1` 
+
+Lanzamos una moneda con probabilidad de cara $p=\frac{1}{2}$ hasta que sale cara dos veces  o bien la hemos lanzamos 5 veces, lo primero que ocurra.
+
+Denotemos por $X$ la variable aleatoria que determina el número de tiradas de la moneda.
+
+Se pide: 
+
+1.  Describir adecuadamente el espacio muestral de la variable $X$ (\textbf{0.5 punto.})
+1.  Calcular  su función de densidad.(\textbf{1 punto.})
+1.  Calcular $E(X)$.(\textbf{1 punto.})
+
+
+
+## Problema `r pr; pr=pr+1` 
+
+Sea $X$  una variable   con distribución uniforme en el intervalo $(1,10)$. Consideremos la variable $Y=\log_{10}(X)$. Se pide
+
+
+1.  Calcular la función de distribución  de $Y$ (\textbf{1 punto.}) 
+1.  Calcular la función de densidad de $X$. (\textbf{0.5 puntos.})
+1.  Calcular el cuantil 0.95 de $X$. (\textbf{0.5 puntos.})
+
+
+
+## Problema `r pr; pr=pr+1`
+
+Consideremos los siguientes sucesos $A$ y $B$ tales que 
+$P(A\cup B)=0.8$, $P(A-B)=0.4$ y $P(B-A)=0.3$. Calcular $P(A\cap B)$, 
+si es  posible.(\textbf{0.5 puntos.}).
+
+
+## Problema `r pr; pr=pr+1` **Ley de Bendford** 
+La ley de Benford es una curiosa distribución de probabilidad que suele aparecer en la distribución del primer dígito de las cantidades registradas en  contabilidades y  en observaciones científicas o datos numéricos.
+La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y sin función de probabilidad es 
+$$
+P_X(x)=P(X=x)=\log(d+1)-\log(d).
+$$
+
+1. Calcular la media y la varianza de $X$.
+1.  Calcular la función de distribución de $X$.
+1. ¿Cuál es el dígito más frecuente (moda)?
+1.  Construid con R las funciones de probabilidad y de distribución de $X$.
+1.  Dibujar con R  las funciones del apartado anterior.
+
+
+## Problema `r pr; pr=pr+1` **Distribución de Pareto** (**Power law**)
+
+Esta distribución que aparece en muchos ámbitos. Consideremos el económico. Supongamos  que en un  gran país consideramos la población activa económicamente; desde el más humilde becario al directivo más adinerado.
+
+Escogemos un individuo al azar de esta población y observamos  la variable $X=$ sus ingresos en euros (digamos que anuales).
+
+Un modelo razonable es el que supone que:
+
+* Hay un ingreso mínimo $x_m>0$.
+* La probabilidad de un ingreso mayor que $x$  decrece de forma inversamente proporcional al ingreso $x$, es decir proporcional a 
+$\left(\frac{x_m}{x}\right)^{\gamma\cdot x}$ para algún número real $\gamma >1.$
+
+Más formalmente. dado $x>x_m$ 
+
+$$P(X>x)=k\cdot \left(\frac{x_m}{x}\right)^{\gamma}.$$
+Luego su función de distribución es 
+
+$$
+F_X(X)=P(X\leq x)=\left\{
+\begin{array}{ll}
+1-P(X > x)= 1- k\cdot \left(\frac{x_m}{x}\right)^{\gamma} & \mbox{ si } x>x_m\\
+0 & \mbox{ si } x\leq x_m
+\end{array}
+\right.
+$$
+Se pide 
+
+1. Calcular  en función de $k$ y $\gamma$ la densidad de la variable $X$.
+1.  Para $\gamma>1$ calcular $E(X)$ y $Var(X)$ y su desviación típica.
+1.  ¿Qué sucede con $E(X)$ si $0<\gamma<1$.
+1.  ¿Cómo se calcula está [distribución con R](https://www.rdocumentation.org/packages/EnvStats/versions/2.3.1/topics/Pareto) [y con python](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.Pareto.html)?
+1. Dibujar las gráficas de su densidad y distribución para $\gamma=3$ y $\gamma=5$.
+1.  Explorar por internet (wikipedia) cómo es la distribución **power law** y qué relación tiene el concepto de *scale free* con los resultados del apartado c).
+
+
+
+## Problema `r pr; pr=pr+1`  **Distribución de Gumbel (teoría del valor extremo)**.
+
+La distribución de Gumbel aparece en variables que miden  lo que se llama un valor extremo: precipitación máxima de lluvia, tiempo máximo transcurrido entre dos terremotos, o en métodos de machine learning el máximo de las  puntuaciones de una algoritmo; por ejemplo comparar pares de objetos (fotos, proteínas, etc.).
+
+Una variable aleatoria  sigue una ley de distribución   Gumbel (de TIPO I) si su distribución es:
+
+$$
+F_X(x)=\left\{
+\begin{array}{ll}
+  e^{-e^{-\frac{x-\mu}{\beta}}} & \mbox{si} x\geq 0\\
+ 0 & \mbox{si} x< 0\\
+\end{array}
+\right.
+$$
+
+Para $\mu$ y $\beta>0$ parámetros reales. Llamaremos distribución Gumbel estándar  a la que tiene por parámetros
+$\mu=0$ y $\beta=1.$ 
+
+1. Si $X$ es una Gumbel estándar calcular su función de densidad y dibujar su gráfica.
+1.  Consideremos la función $F(x)=e^{-e^{-x}}$ para $x\geq 0$ y que vale  cero en el resto de casos. Comprobar que es la función de distribución $P(X\leq x)$ de una v.a. Gumbel estándar.
+1.  Buscad un paquete de R que implemente la distribución Gumbel. Aseguraros  de que es  la (Gumbel Tipo I). Dejando fijo el parámetro $\beta=1$ dibujar la densidad Gumbel para varios valores de $\mu$ y explicad en que afecta a la gráfica el cambio de $\mu$.
+1.  Dejando fijo el parámetro $\mu$ dibujad la densidad Gumbel para varios valores de $\beta>0$ y explicar  en que afecta a la gráfica el cambio  de este parámetro.
+1.  Buscad cuales son las fórmulas de la esperanza y varianza de una distribución Gumbel en función de $\alpha$ y $\beta$.
+
+
+
