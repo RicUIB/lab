@@ -1,6 +1,6 @@
 ---
 title: "SOLUCIONES: Ejercicios Tema - Variables aleatorias notables continuas"
-author: "Labboratorio de software y problemas 2.  GMAT"
+author: "Laboratorio de software y problemas 2.  GMAT"
 date: "n"
 output:
   pdf_document: 
@@ -21,7 +21,7 @@ options(scipen=999)
 contador=0
 ```
 
-# Variables aleatorias continuaS
+# Variables aleatorias continuas
 
 
 ## Problema `r contador=contador+1;contador`.
@@ -187,7 +187,7 @@ Con R
 round(pnorm(660000,mean=600000,sd=60000)-pnorm(560000,mean=600000,sd=60000),4)
 ```
 
-En el 58\% de los casos (aproximadamente) el coste se tituará entre esas dos cantidades
+En el 58\% de los casos (aproximadamente) el coste se situará entre esas dos cantidades
 
 b. Nos piden  el valor $x_0$ tal que $P(X>x_0)=0.2$, es decir el valor que supera el 20\% de las  viviendas más caras.  Este valor será el que deje por debajo  el coste del 89\% de las casas por lo que es el cuantil 0.8 lo calculamos con R (ejercicio utiliza  google sheets para obtener el mismo resultado)
 
@@ -224,7 +224,7 @@ Si $X$ está distribuida uniformemente en $(0,2)$ e $Y$ es una variable exponenc
 
 $X$ sigue una ley $U(0,2)$ luego $F_X(x)=P(X\leq x)=\frac{x}{2}$ si $0<x<2$ y  la variable $Y$ es una $Exp(\lambda)$ luego $F_Y(y)=P(Y\leq y)=1-e^{-\lambda\cdot x}$ si $x>0$.
 
-Luego $P(X<1)=\frac{1}{2}$ y $P(Y\leq 1)=1-e^{\lambda\cdot 1}$. POr lo tanto nos piden el valor de $lambda$ tal que $\frac{1}{2}=1-e^{-\lambda}$.
+Luego $P(X<1)=\frac{1}{2}$ y $P(Y\leq 1)=1-e^{\lambda\cdot 1}$. Por lo tanto nos piden el valor de $\lambda$ tal que $\frac{1}{2}=1-e^{-\lambda}$.
 
 Así que $e^{-\lambda}=1-\frac12=0.5$ luego $-\lambda=\ln(0.5)=`r log(0.5)`.$ por lo tanto $\lambda=`r - log(0.5)`.$
 

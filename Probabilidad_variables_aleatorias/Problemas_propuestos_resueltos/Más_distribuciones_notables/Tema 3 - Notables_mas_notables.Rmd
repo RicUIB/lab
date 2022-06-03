@@ -1,6 +1,6 @@
 ---
 title: "Ejercicios - Distribuciones Notables: más distribuciones notables"
-author: "Laboratorio de software y problemas 2. GMAT"
+author: "Laboratorio de software y problemas 2."
 date: ""
 output:
   pdf_document: 
