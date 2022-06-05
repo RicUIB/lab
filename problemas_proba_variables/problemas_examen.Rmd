@@ -126,9 +126,9 @@ si es  posible.(\textbf{0.5 puntos.}).
 
 ## Problema `r pr; pr=pr+1` **Ley de Bendford** 
 La ley de Benford es una curiosa distribución de probabilidad que suele aparecer en la distribución del primer dígito de las cantidades registradas en  contabilidades y  en observaciones científicas o datos numéricos.
-La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y sin función de probabilidad es 
+La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y su función de probabilidad es ($\log$ es el logaritmo en base $10$)
 $$
-P_X(x)=P(X=x)=\log(d+1)-\log(d).
+P_X(x)=P(X=x)=\log(x+1)-\log(x).
 $$
 
 1. Calcular la media y la varianza de $X$.
@@ -183,8 +183,8 @@ Una variable aleatoria  sigue una ley de distribución   Gumbel (de TIPO I) si s
 $$
 F_X(x)=\left\{
 \begin{array}{ll}
-  e^{-e^{-\frac{x-\mu}{\beta}}} & \mbox{si} x\geq 0\\
- 0 & \mbox{si} x< 0\\
+  e^{-e^{-\frac{x-\mu}{\beta}}} & \mbox{si } x\geq 0\\
+ 0 & \mbox{si } x< 0\\
 \end{array}
 \right.
 $$
